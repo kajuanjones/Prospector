@@ -4,25 +4,29 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-
-public class Prospector : MonoBehaviour {
-
-	static public Prospector 	S;
-
-	[Header("Set in Inspector")]
-	public TextAsset			deckXML;
+// Rewrote code to understand it
 
 
-	[Header("Set Dynamically")]
-	public Deck					deck;
+public class Prospector : MonoBehaviour
+{
+    static public Prospector S;
 
-	void Awake(){
-		S = this;
-	}
+    [Header("Set in Inspector")]
+    public TextAsset deckXML;
 
-	void Start() {
-		deck = GetComponent<Deck> ();
-		deck.InitDeck (deckXML.text);
-	}
+    [Header("Set Dynamically")]
+    public Deck deck;
 
+     void Awake()
+    {
+        S = this;  
+    }
+
+    void Start()
+    {
+        deck = GetComponent<Deck>();
+        deck.InitDeck(deckXML.text);
+    }
 }
+
+
